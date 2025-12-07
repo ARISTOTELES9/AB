@@ -1,167 +1,233 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aristóteles Business - Desbloqueio & Serviços</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#0a0a0a] text-white font-sans">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aristóteles Business — Desbloqueio de iPhones</title>
+  <meta name="description" content="Desbloqueio profissional de iPhones 5s até 17 Pro Max — serviços, licenças, servidores e formação." />
+  <style>
+    :root{
+      --bg:#071017; --card:#0f1720; --accent:#00d1a1; --muted:#9aa4ab; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --gap:18px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef3;background:linear-gradient(180deg,var(--bg),#031016);}
 
-  <!-- HEADER -->
-  <header class="p-6 flex justify-between items-center bg-white/5 backdrop-blur-md sticky top-0 z-50">
-    <h1 class="text-2xl font-bold">Aristóteles Business</h1>
-    <nav class="space-x-6 text-gray-300">
-      <a href="#servicos" class="hover:text-white">Serviços</a>
-      <a href="#precos" class="hover:text-white">Preços</a>
-      <a href="#contacto" class="hover:text-white">Contacto</a>
-    </nav>
+    header{background:linear-gradient(90deg,#02121a 0%, #081621 100%);backdrop-filter:blur(6px);padding:22px 16px;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .wrap{max-width: 100%; /* Responsivo para PC e Telemóvel */margin:20px auto;padding:0 16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#00a89a);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021217}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+
+    .top-controls{margin-left:auto;display:flex;align-items:center;gap:12px}
+    .lang{padding:8px 10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02);cursor:pointer}
+
+    main{padding:18px 0}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center}
+    @media (max-width:920px){.hero{grid-template-columns:1fr} .top-controls{margin-top:12px}}
+
+    .card{background:linear-gradient(180deg,var(--card),#07121a);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,8,12,0.6);border:1px solid rgba(255,255,255,0.02)}
+
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+    @media (max-width:700px){.features{grid-template-columns:1fr}}
+
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+
+    .iphone-img{width:100%;height:160px;background:#08121a;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+
+    .whatsapp{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#25d366;color:#021217;text-decoration:none;font-weight:700}
+
+    form.inline{display:flex;flex-direction:column;gap:10px}
+    input,select,textarea{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+    .btn{padding:12px 14px;border-radius:10px;border:none;background:var(--accent);color:#021217;font-weight:700;cursor:pointer}
+
+    .payments{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .pay-pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);font-size:13px}
+
+    footer{padding:20px 0;margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    @media (max-width:920px){.grid-2{grid-template-columns:1fr}}
+
+    .lang-toggle{display:flex;gap:6px}
+    .lang-toggle button{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;cursor:pointer}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">AB</div>
+        <div>
+          <h1>Aristóteles Business — Desbloqueio iPhones (5s → 17 Pro Max)</h1>
+          <p class="lead">Serviços profissionais: com sinal, sem sinal, licenças, servidores e formação técnica.</p>
+        </div>
+      </div>
+
+      <div class="top-controls" style="margin-left:auto">
+        <div class="lang" aria-hidden>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="muted">Idioma</span>
+            <div class="lang-toggle" role="tablist" aria-label="Selecionar idioma">
+              <button data-lang="pt" title="Português (PT)">PT</button>
+              <button data-lang="br" title="Português (BR)">BR</button>
+              <button data-lang="en" title="Inglês">EN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="text-center py-20 px-6 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1350&q=80');">
-    <div class="bg-black/60 backdrop-blur-md p-10 rounded-xl inline-block">
-      <h2 class="text-4xl font-bold mb-4">Desbloqueio Profissional de iPhones</h2>
-      <p class="text-lg text-gray-200 max-w-2xl mx-auto">Bypass com sinal, desbloqueio avançado XR → 17 Pro Max, licenças oficiais e reparações de software.</p>
-      <a href="https://wa.me/244937471447" target="_blank" class="mt-6 inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold">Falar no WhatsApp</a>
-    </div>
-  </section>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h2>Serviços Rápidos e Seguros</h2>
+          <p class="muted">Oferecemos desbloqueio com sinal (5s → X) e sem sinal (XR → 17 Pro Max). Ativação de servidores, venda de licenças e formação técnica.</p>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="py-16 px-6 max-w-6xl mx-auto">
-    <h3 class="text-3xl font-bold mb-10">Serviços Disponíveis</h3>
+          <div class="features">
+            <div>
+              <h4>Ferramentas</h4>
+              <p class="muted">Iremoval Pro, Iremove Tools, FRPFILE, Unlocktool, Hydra, TSM PRO, TFM.</p>
+            </div>
+            <div>
+              <h4>Serviços</h4>
+              <p class="muted">Activação de servidores · Vendas de placas desbloqueadas · Formação presencial e online.</p>
+            </div>
+          </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow">
-        <h4 class="text-xl font-semibold mb-2">Bypass com Sinal (5s → X)</h4>
-        <p class="text-gray-300">Diagnóstico, baseband e activação.</p>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <a class="whatsapp" id="waLink" href="https://wa.me/244954023619?text=Olá,+quero+um+serviço+de+desbloqueio" target="_blank" rel="noopener">📲 WhatsApp: +244 954 023 619</a>
+            <button class="btn" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">Faça já o pedido</button>
+          </div>
+
+          <div style="margin-top:14px">
+            <h4>Pagamentos aceites</h4>
+            <div class="payments">
+              <span class="pay-pill">USDT (TRC20)</span>
+              <span class="pay-pill">BNB</span>
+              <span class="pay-pill">EURO</span>
+              <span class="pay-pill">BINANCE</span>
+              <span class="pay-pill">REDOTPAY</span>
+              <span class="pay-pill">PAYPAL</span>
+              <span class="pay-pill">BYBIT</span>
+              <span class="pay-pill">AIRTM</span>
+              <span class="pay-pill">Transferência Express</span>
+              <span class="pay-pill">BAI · BFA · BCI</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Modelos Suportados</h3>
+          <div class="services-grid">
+            <div class="card" style="padding:12px">
+              <div class="iphone-img">iPhone 5s / 6 / 6s</div>
+              <p class="muted">Desbloqueio com sinal</p>
+            </div>
+            <div class="card" style="padding:12px">
+              <div class="iphone-img">iPhone 7 / 8 / X</div>
+              <p class="muted">Com e sem sinal</p>
+            </div>
+            <div class="card" style="padding:12px">
+              <div class="iphone-img">iPhone XR → 17 Pro Max</div>
+              <p class="muted">Sem sinal (avançado)</p>
+            </div>
+            <div class="card" style="padding:12px">
+              <div class="iphone-img">Placas Desbloqueadas</div>
+              <p class="muted">Venda por encomenda</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow">
-        <h4 class="text-xl font-semibold mb-2">Desbloqueio XR → 17 Pro Max</h4>
-        <p class="text-gray-300">Métodos modernos: UnlockTool, TSM, IRemove, TFM.</p>
+      <aside>
+        <div class="card">
+          <h3>Pedido Rápido</h3>
+          <form id="pedido" class="inline" onsubmit="handleSubmit(event)">
+            <input id="nome" name="nome" placeholder="Nome completo" required />
+            <select id="servico" name="servico" required>
+              <option value="">Selecione o serviço</option>
+              <option>Desbloqueio com sinal (5s → X)</option>
+              <option>Desbloqueio sem sinal (XR → 17 Pro Max)</option>
+              <option>Compra de licença</option>
+              <option>Activação de servidor</option>
+              <option>Formação / Curso</option>
+              <option>Compra de placa desbloqueada</option>
+            </select>
+            <input id="contacto" name="contacto" placeholder="Contacto (telefone/email/WA)" required />
+            <textarea id="detalhes" name="detalhes" rows="4" placeholder="Descrição / IMEI / Modelo / Observações (opcional)"></textarea>
+            <button class="btn" type="submit">ENVIAR PEDIDO</button>
+          </form>
+
+          <p class="muted" style="margin-top:10px">Também pode abrir chat directo no WhatsApp: <a id="waOnly" href="https://wa.me/244954023619?text=Olá,+quero+um+serviço+de+desbloqueio" target="_blank" class="muted">+244 954 023 619</a></p>
+
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4>Vendas de Licenças</h4>
+          <p class="muted">Unlocktool · Hydra Tool · TSM PRO · TFM · Iremoval Pro · FRPFILE</p>
+        </div>
+
+      </aside>
+    </section>
+
+    <section style="margin-top:20px">
+      <div class="card">
+        <h3>Contacto e Suporte</h3>
+        <p class="muted">WhatsApp: <strong>+244 954 023 619</strong> · Email: <strong>alacademy@gmail.com</strong></p>
+        <p class="muted">Local: Viana, Luanda Sul — Aristóteles Business</p>
       </div>
+    </section>
+  </main>
 
-      <div class="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow">
-        <h4 class="text-xl font-semibold mb-2">Licenças & Servidores</h4>
-        <p class="text-gray-300">Activação de ferramentas oficiais.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PREÇOS -->
-  <section id="precos" class="py-16 px-6 max-w-6xl mx-auto">
-    <h3 class="text-3xl font-bold mb-6">Preços (USD)</h3>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-      <div class="p-6 bg-white/5 rounded-xl shadow">
-        <h4 class="font-semibold text-lg">Bypass com Sinal (5s → X)</h4>
-        <p class="text-gray-300 mt-2 text-sm">Diagnóstico + baseband.</p>
-        <p class="mt-4 text-2xl font-bold text-green-400">$30 USD</p>
-      </div>
-
-      <div class="p-6 bg-white/5 rounded-xl shadow">
-        <h4 class="font-semibold text-lg">Desbloqueio XR → 17 Pro Max</h4>
-        <p class="text-gray-300 mt-2 text-sm">Via ferramenta oficial.</p>
-        <p class="mt-4 text-2xl font-bold text-green-400">$45 USD</p>
-      </div>
-
-      <div class="p-6 bg-white/5 rounded-xl shadow">
-        <h4 class="font-semibold text-lg">Licenças & Servidores</h4>
-        <ul class="mt-3 text-gray-200 text-sm space-y-1">
-          <li>UnlockTool — <span class="font-bold text-green-400">$60 USD</span></li>
-          <li>IRemove — <span class="font-bold text-green-400">$55 USD</span></li>
-          <li>IRemoval Pro — <span class="font-bold text-green-400">$65 USD</span></li>
-          <li>FRPFILE — <span class="font-bold text-green-400">$40 USD</span></li>
-          <li>TSM Server — <span class="font-bold text-green-400">$70 USD</span></li>
-          <li>TFM Tool — <span class="font-bold text-green-400">$50 USD</span></li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-16 px-6 max-w-6xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-4">Contacto</h3>
-    <p class="text-gray-300 mb-6">Atendimento rápido via WhatsApp.</p>
-    <a href="https://wa.me/244937471447" target="_blank" class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-lg font-semibold">Contactar Agora</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="text-center py-6 bg-white/5 mt-10">
-    <p class="text-gray-400">© 2025 Aristóteles Business. Todos os direitos reservados.</p>
+  <footer>
+    © Aristóteles Business — Todos os direitos reservados
   </footer>
 
-</body> <!-- ======== PROMOÇÃO – ACTIVACÃO SEM SINAL ======== -->
+  <script>
+    // language switcher (simple): stores lang in localStorage and updates text placeholders
+    const langButtons = document.querySelectorAll('[data-lang]');
+    const defaultLang = localStorage.getItem('site_lang') || 'pt';
+    function setLang(l){
+      localStorage.setItem('site_lang', l);
+      // currently only updates placeholder texts; extend as needed
+      const nome = document.getElementById('nome');
+      if(!nome) return;
+      if(l==='en'){
+        nome.placeholder = 'Full name';
+        document.getElementById('servico').options[0].text = 'Select a service';
+        document.querySelector('.whatsapp').textContent = 'WhatsApp: +244 954 023 619';
+      } else if(l==='br'){
+        nome.placeholder = 'Nome completo';
+      } else {
+        nome.placeholder = 'Nome completo';
+      }
+    }
+    langButtons.forEach(b=>b.addEventListener('click',()=>setLang(b.getAttribute('data-lang'))));
+    setLang(defaultLang);
 
-<section style="
-    background: linear-gradient(90deg, #000, #0a0a0a, #001a00);
-    padding: 40px 20px;
-    text-align: center;
-    color: #00ff88;
-    font-family: Arial, sans-serif;
-">
-    <h1 style="font-size: 35px; font-weight: bold; margin-bottom: 10px;">
-        🔥 GRANDE PROMOÇÃO – ACTIVACÃO SEM SINAL 🔥
-    </h1>
-
-    <p style="font-size: 22px; color: #fff;">
-        iPhones XR até 17 Pro Max  
-        <br><strong style="color:#00ff88;">Apenas $25 USD – $50 USD</strong>
-        <br>⏳ Promoção válida por <strong>7 dias</strong>
-    </p>
-
-    <img src="https://i.imgur.com/5ezw3hX.png" 
-         style="width: 250px; margin: 25px auto; display: block;">
-</section>
-
-
-<!-- ======== TABELA DE PREÇOS PROMOCIONAL ======== -->
-
-<section style="background:#0d0d0d; padding:40px 10px; font-family:Arial;">
-    <h2 style="text-align:center; font-size:30px; color:#00ff88;">
-        📱 Tabela de Preços Promocionais
-    </h2>
-
-    <table style="
-        width: 95%;
-        margin: 25px auto;
-        border-collapse: collapse;
-        color: white;
-        font-size: 18px;
-    ">
-        <tr style="background:#00ff88; color:#000;">
-            <th style="padding:15px; border:1px solid #00ff88;">Modelo</th>
-            <th style="padding:15px; border:1px solid #00ff88;">Preço</th>
-        </tr>
-
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone XR / XS / XS Max</td><td style="padding:15px; border:1px solid #00ff88;">25 USD</td></tr>
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone 11 / 11 Pro / 11 Pro Max</td><td style="padding:15px; border:1px solid #00ff88;">28 USD</td></tr>
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone 12 / 12 Pro / 12 Pro Max</td><td style="padding:15px; border:1px solid #00ff88;">32 USD</td></tr>
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone 13 / 13 Pro / 13 Pro Max</td><td style="padding:15px; border:1px solid #00ff88;">35 USD</td></tr>
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone 14 / 14 Plus / 14 Pro / 14 Pro Max</td><td style="padding:15px; border:1px solid #00ff88;">40 USD</td></tr>
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone 15 / 15 Pro / 15 Pro Max</td><td style="padding:15px; border:1px solid #00ff88;">43 USD</td></tr>
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone 16 / 16 Pro / 16 Pro Max</td><td style="padding:15px; border:1px solid #00ff88;">45 USD</td></tr>
-        <tr><td style="padding:15px; border:1px solid #00ff88;">iPhone 17 / 17 Pro / 17 Pro Max</td><td style="padding:15px; border:1px solid #00ff88;">50 USD</td></tr>
-    </table>
-
-    <div style="text-align:center; margin-top:30px;">
-        <a href="https://wa.me/244937471447" style="
-            background:#00ff88;
-            color:#000;
-            padding:15px 30px;
-            font-size:22px;
-            font-weight:bold;
-            border-radius:12px;
-            text-decoration:none;
-            box-shadow:0 0 15px rgba(0,255,130,0.5);
-        ">📞 Contactar Agora</a>
-    </div>
-</section>
-
+    function handleSubmit(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value.trim();
+      const serv = document.getElementById('servico').value;
+      const contacto = document.getElementById('contacto').value.trim();
+      const detalhes = document.getElementById('detalhes').value.trim();
+      const text = `Pedido:%0ANome:%20${encodeURIComponent(nome)}%0AServiço:%20${encodeURIComponent(serv)}%0AContacto:%20${encodeURIComponent(contacto)}%0ADetalhes:%20${encodeURIComponent(detalhes)}`;
+      const wa = `https://wa.me/244954023619?text=${text}`;
+      window.open(wa,'_blank');
+    }
+  </script>
+<footer style="background:#1a1a1a; padding:20px; text-align:center; color:#ccc; margin-top:40px;">
+    <p><strong>Email:</strong> aristotelesluposssa94@gmail.com</p>
+    <p><strong>Localização:</strong> Luanda, Angola</p>
+</footer>
+</body>
 </html>
-
-
-

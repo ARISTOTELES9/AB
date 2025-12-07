@@ -2,232 +2,220 @@
 <html lang="pt">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aristóteles Business — Desbloqueio de iPhones</title>
-  <meta name="description" content="Desbloqueio profissional de iPhones 5s até 17 Pro Max — serviços, licenças, servidores e formação." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aristóteles Business — Desbloqueio Profissional de iPhones</title>
   <style>
     :root{
-      --bg:#071017; --card:#0f1720; --accent:#00d1a1; --muted:#9aa4ab; --glass: rgba(255,255,255,0.04);
-      --radius:14px; --gap:18px; --maxw:1100px;
+      --bg:#050c12;
+      --card:#0e1a24;
+      --accent:#00d4b0;
+      --accent-2:#009dff;
+      --radius:18px;
+      --muted:#d7e0e6;
+      --maxw:1180px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef3;background:linear-gradient(180deg,var(--bg),#031016);}
-
-    header{background:linear-gradient(90deg,#02121a 0%, #081621 100%);backdrop-filter:blur(6px);padding:22px 16px;border-bottom:1px solid rgba(255,255,255,0.03)}
-    .wrap{max-width: 100%; /* Responsivo para PC e Telemóvel */margin:20px auto;padding:0 16px}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial}
+    body{
+      background:linear-gradient(180deg,var(--bg),#02070a);
+      color:#fff;
+      line-height:1.6;
+      padding-bottom:60px;
+    }
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(10,20,28,0.8);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+    .wrap{
+      max-width:var(--maxw);
+      margin:auto;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
     .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#00a89a);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021217}
-    h1{font-size:20px;margin:0}
-    p.lead{color:var(--muted);margin:6px 0 0;font-size:14px}
+    .logo{
+      width:62px;height:62px;border-radius:16px;
+      background:linear-gradient(135deg,var(--accent-2),var(--accent));
+      font-weight:900;font-size:22px;
+      display:flex;align-items:center;justify-content:center;
+      color:#021217;
+    }
+    nav a{
+      margin-left:20px;color:var(--muted);
+      text-decoration:none;font-weight:700;font-size:14px;
+      padding:8px 10px;border-radius:8px;
+      transition:0.2s;
+    }
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.08)}
 
-    .top-controls{margin-left:auto;display:flex;align-items:center;gap:12px}
-    .lang{padding:8px 10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02);cursor:pointer}
+    .hero{
+      max-width:var(--maxw);
+      margin:50px auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:40px;
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+    }
+    .hero h1{
+      font-size:2.4rem;
+      font-weight:900;
+      line-height:1.2;
+      margin-bottom:16px;
+    }
+    .hero p{font-size:1.05rem;color:var(--muted);max-width:520px}
 
-    main{padding:18px 0}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center}
-    @media (max-width:920px){.hero{grid-template-columns:1fr} .top-controls{margin-top:12px}}
+    .btn-primary{
+      background:var(--accent);
+      color:#021217;
+      padding:14px 20px;
+      border:none;
+      border-radius:14px;
+      font-size:1rem;
+      font-weight:800;
+      cursor:pointer;
+      margin-top:22px;
+    }
 
-    .card{background:linear-gradient(180deg,var(--card),#07121a);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,8,12,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .card{
+      background:var(--card);
+      padding:20px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.06);
+    }
 
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
-    @media (max-width:700px){.features{grid-template-columns:1fr}}
+    .section{
+      max-width:var(--maxw);
+      margin:60px auto;
+      padding:0 20px;
+    }
+    .section h2{
+      font-size:1.9rem;
+      margin-bottom:18px;
+      font-weight:900;
+    }
 
-    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      margin-top:20px;
+    }
+    .service{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      border:1px solid rgba(255,255,255,0.05);
+      transition:0.2s;
+    }
+    .service:hover{transform:translateY(-4px);border-color:var(--accent)}
+    .service h3{margin-bottom:10px;font-size:1.2rem;font-weight:800}
+    .service p{color:var(--muted);font-size:.95rem}
 
-    .iphone-img{width:100%;height:160px;background:#08121a;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+      margin-top:22px;
+    }
+    .gallery img{
+      width:100%;
+      height:240px;
+      border-radius:16px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,0.05);
+    }
 
-    .whatsapp{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#25d366;color:#021217;text-decoration:none;font-weight:700}
-
-    form.inline{display:flex;flex-direction:column;gap:10px}
-    input,select,textarea{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
-    .btn{padding:12px 14px;border-radius:10px;border:none;background:var(--accent);color:#021217;font-weight:700;cursor:pointer}
-
-    .payments{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .pay-pill{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);font-size:13px}
-
-    footer{padding:20px 0;margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:16px}
-    @media (max-width:920px){.grid-2{grid-template-columns:1fr}}
-
-    .lang-toggle{display:flex;gap:6px}
-    .lang-toggle button{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;cursor:pointer}
-
+    footer{
+      margin-top:60px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="wrap" style="display:flex;align-items:center">
+    <div class="wrap">
       <div class="brand">
         <div class="logo">AB</div>
-        <div>
-          <h1>Aristóteles Business — Desbloqueio iPhones (5s → 17 Pro Max)</h1>
-          <p class="lead">Serviços profissionais: com sinal, sem sinal, licenças, servidores e formação técnica.</p>
-        </div>
+        <strong>Aristóteles Business</strong>
       </div>
-
-      <div class="top-controls" style="margin-left:auto">
-        <div class="lang" aria-hidden>
-          <div style="display:flex;align-items:center;gap:8px">
-            <span class="muted">Idioma</span>
-            <div class="lang-toggle" role="tablist" aria-label="Selecionar idioma">
-              <button data-lang="pt" title="Português (PT)">PT</button>
-              <button data-lang="br" title="Português (BR)">BR</button>
-              <button data-lang="en" title="Inglês">EN</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div>
-        <div class="card">
-          <h2>Serviços Rápidos e Seguros</h2>
-          <p class="muted">Oferecemos desbloqueio com sinal (5s → X) e sem sinal (XR → 17 Pro Max). Ativação de servidores, venda de licenças e formação técnica.</p>
+  <section class="hero">
+    <div>
+      <h1>Desbloqueio Profissional de iPhones<br><span style="color:var(--accent)">5s até 17 Pro Max</span></h1>
+      <p>Serviços completos: desbloqueio com e sem sinal, licenças oficiais, servidores, suporte remoto e formação técnica avançada.</p>
+      <button class="btn-primary">Fazer Pedido</button>
+    </div>
 
-          <div class="features">
-            <div>
-              <h4>Ferramentas</h4>
-              <p class="muted">Iremoval Pro, Iremove Tools, FRPFILE, Unlocktool, Hydra, TSM PRO, TFM.</p>
-            </div>
-            <div>
-              <h4>Serviços</h4>
-              <p class="muted">Activação de servidores · Vendas de placas desbloqueadas · Formação presencial e online.</p>
-            </div>
-          </div>
+    <div class="card">
+      <h3 style="margin-bottom:10px">Pedido Rápido</h3>
+      <form style="display:flex;flex-direction:column;gap:12px">
+        <input type="text" placeholder="Seu nome" required>
+        <select required>
+          <option>Selecionar o serviço</option>
+          <option>Desbloqueio com sinal</option>
+          <option>Desbloqueio sem sinal</option>
+          <option>Licenças / Servidores</option>
+          <option>Formação técnica</option>
+        </select>
+        <input type="text" placeholder="WhatsApp / Contacto" required>
+        <textarea placeholder="Detalhes"></textarea>
+        <button class="btn-primary" style="width:100%">Enviar pelo WhatsApp</button>
+      </form>
+    </div>
+  </section>
 
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-            <a class="whatsapp" id="waLink" href="https://wa.me/244954023619?text=Olá,+quero+um+serviço+de+desbloqueio" target="_blank" rel="noopener">📲 WhatsApp: +244 954 023 619</a>
-            <button class="btn" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">Faça já o pedido</button>
-          </div>
-
-          <div style="margin-top:14px">
-            <h4>Pagamentos aceites</h4>
-            <div class="payments">
-              <span class="pay-pill">USDT (TRC20)</span>
-              <span class="pay-pill">BNB</span>
-              <span class="pay-pill">EURO</span>
-              <span class="pay-pill">BINANCE</span>
-              <span class="pay-pill">REDOTPAY</span>
-              <span class="pay-pill">PAYPAL</span>
-              <span class="pay-pill">BYBIT</span>
-              <span class="pay-pill">AIRTM</span>
-              <span class="pay-pill">Transferência Express</span>
-              <span class="pay-pill">BAI · BFA · BCI</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <h3>Modelos Suportados</h3>
-          <div class="services-grid">
-            <div class="card" style="padding:12px">
-              <div class="iphone-img">iPhone 5s / 6 / 6s</div>
-              <p class="muted">Desbloqueio com sinal</p>
-            </div>
-            <div class="card" style="padding:12px">
-              <div class="iphone-img">iPhone 7 / 8 / X</div>
-              <p class="muted">Com e sem sinal</p>
-            </div>
-            <div class="card" style="padding:12px">
-              <div class="iphone-img">iPhone XR → 17 Pro Max</div>
-              <p class="muted">Sem sinal (avançado)</p>
-            </div>
-            <div class="card" style="padding:12px">
-              <div class="iphone-img">Placas Desbloqueadas</div>
-              <p class="muted">Venda por encomenda</p>
-            </div>
-          </div>
-        </div>
-
+  <section class="section" id="servicos">
+    <h2>Serviços Disponíveis</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>Desbloqueio com Sinal</h3>
+        <p>Ativação profissional com leitura de rede. Processo seguro, rápido e com garantia.</p>
       </div>
 
-      <aside>
-        <div class="card">
-          <h3>Pedido Rápido</h3>
-          <form id="pedido" class="inline" onsubmit="handleSubmit(event)">
-            <input id="nome" name="nome" placeholder="Nome completo" required />
-            <select id="servico" name="servico" required>
-              <option value="">Selecione o serviço</option>
-              <option>Desbloqueio com sinal (5s → X)</option>
-              <option>Desbloqueio sem sinal (XR → 17 Pro Max)</option>
-              <option>Compra de licença</option>
-              <option>Activação de servidor</option>
-              <option>Formação / Curso</option>
-              <option>Compra de placa desbloqueada</option>
-            </select>
-            <input id="contacto" name="contacto" placeholder="Contacto (telefone/email/WA)" required />
-            <textarea id="detalhes" name="detalhes" rows="4" placeholder="Descrição / IMEI / Modelo / Observações (opcional)"></textarea>
-            <button class="btn" type="submit">ENVIAR PEDIDO</button>
-          </form>
-
-          <p class="muted" style="margin-top:10px">Também pode abrir chat directo no WhatsApp: <a id="waOnly" href="https://wa.me/244954023619?text=Olá,+quero+um+serviço+de+desbloqueio" target="_blank" class="muted">+244 954 023 619</a></p>
-
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h4>Vendas de Licenças</h4>
-          <p class="muted">Unlocktool · Hydra Tool · TSM PRO · TFM · Iremoval Pro · FRPFILE</p>
-        </div>
-
-      </aside>
-    </section>
-
-    <section style="margin-top:20px">
-      <div class="card">
-        <h3>Contacto e Suporte</h3>
-        <p class="muted">WhatsApp: <strong>+244 954 023 619</strong> · Email: <strong>alacademy@gmail.com</strong></p>
-        <p class="muted">Local: Viana, Luanda Sul — Aristóteles Business</p>
+      <div class="service">
+        <h3>Desbloqueio Sem Sinal</h3>
+        <p>Solução para dispositivos com problemas de rede, mantendo acesso completo ao sistema.</p>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    © Aristóteles Business — Todos os direitos reservados
+      <div class="service">
+        <h3>Licenças & Servidores</h3>
+        <p>Ativação de ferramentas autorizadas, servidores premium e suporte remoto especializado.</p>
+      </div>
+
+      <div class="service">
+        <h3>Formação Técnica</h3>
+        <p>Aprimore suas habilidades com treinamento intensivo em desbloqueio e reparo de software.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeria">
+    <h2>Galeria</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1592750475338-74b3f3b6c5a5" />
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" />
+      <img src="https://images.unsplash.com/photo-1603898037225-1ff7c1e90c89" />
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" />
+    </div>
+  </section>
+
+  <footer id="contato">
+    © 2025 Aristóteles Business — Todos os direitos reservados
   </footer>
-
-  <script>
-    // language switcher (simple): stores lang in localStorage and updates text placeholders
-    const langButtons = document.querySelectorAll('[data-lang]');
-    const defaultLang = localStorage.getItem('site_lang') || 'pt';
-    function setLang(l){
-      localStorage.setItem('site_lang', l);
-      // currently only updates placeholder texts; extend as needed
-      const nome = document.getElementById('nome');
-      if(!nome) return;
-      if(l==='en'){
-        nome.placeholder = 'Full name';
-        document.getElementById('servico').options[0].text = 'Select a service';
-        document.querySelector('.whatsapp').textContent = 'WhatsApp: +244 954 023 619';
-      } else if(l==='br'){
-        nome.placeholder = 'Nome completo';
-      } else {
-        nome.placeholder = 'Nome completo';
-      }
-    }
-    langButtons.forEach(b=>b.addEventListener('click',()=>setLang(b.getAttribute('data-lang'))));
-    setLang(defaultLang);
-
-    function handleSubmit(e){
-      e.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const serv = document.getElementById('servico').value;
-      const contacto = document.getElementById('contacto').value.trim();
-      const detalhes = document.getElementById('detalhes').value.trim();
-      const text = `Pedido:%0ANome:%20${encodeURIComponent(nome)}%0AServiço:%20${encodeURIComponent(serv)}%0AContacto:%20${encodeURIComponent(contacto)}%0ADetalhes:%20${encodeURIComponent(detalhes)}`;
-      const wa = `https://wa.me/244954023619?text=${text}`;
-      window.open(wa,'_blank');
-    }
-  </script>
-<footer style="background:#1a1a1a; padding:20px; text-align:center; color:#ccc; margin-top:40px;">
-    <p><strong>Email:</strong> aristotelesluposssa94@gmail.com</p>
-    <p><strong>Localização:</strong> Luanda, Angola</p>
-</footer>
 </body>
 </html>
